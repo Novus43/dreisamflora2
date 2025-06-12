@@ -65,6 +65,7 @@ export const CollectInformation = () => {
                 first_name: "",
                 last_name: "",
                 email: "",
+                group: "",
                 address: {},
                 questions: {},
             },
@@ -298,6 +299,18 @@ export const CollectInformation = () => {
                         label={t`Email Address`}
                         placeholder={t`Email Address`}
                         {...form.getInputProps("order.email")}
+                    />
+
+                    <NativeSelect
+                        withAsterisk
+                        label={t`Gruppe`}
+                        data={[
+                            { value: 'Hauptgruppe', label: t`Hauptgruppe` },
+                            { value: 'Nachwuchs', label: t`Nachwuchs` },
+                            { value: 'Umfeld', label: t`Umfeld` },
+                            { value: 'Interesse', label: t`Interesse` },
+                        ]}
+                        {...form.getInputProps("order.group")}
                     />
 
                     {orderRequiresAttendeeDetails && (
